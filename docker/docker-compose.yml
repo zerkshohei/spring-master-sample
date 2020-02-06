@@ -1,0 +1,7 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:12.1-alpine'
+    environment:
+      POSTGRES_PASSWORD: psexample
+

@@ -1,7 +1,9 @@
 plugins {
     id("org.springframework.boot")
-    id("org.jetbrains.kotlin.plugin.spring")
+    application
+
     kotlin("jvm")
+    kotlin("plugin.spring")
 }
 dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

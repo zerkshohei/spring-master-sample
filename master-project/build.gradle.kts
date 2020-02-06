@@ -28,8 +28,6 @@ subprojects {
     println("spring boot dependency in root project")
 
     // 混在する場合は必要になるはず
-//    java.sourceCompatibility = JavaVersion.VERSION_11
-//    java.targetCompatibility = JavaVersion.VERSION_11
 
     tasks.withType<Test> {
         useJUnitPlatform()
