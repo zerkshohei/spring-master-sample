@@ -1,7 +1,5 @@
 package com.zerkshohei.spring.memo.dto;
 
-import com.zerkshohei.spring.memo.service.UserService;
-
 public class User {
 
     public User(String name, String email) {
