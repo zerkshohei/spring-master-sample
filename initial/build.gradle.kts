@@ -1,7 +1,5 @@
 plugins {
     id("org.springframework.boot")
-    application
-
     kotlin("jvm")
     kotlin("plugin.spring")
 }
