@@ -16,4 +16,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x master-project/gradlew
     - name: Build with Gradle
-      run: master-project/gradlew -b master-project/build.gradle build
+      run: master-project/gradlew -b master-project/build.gradle.kts build
