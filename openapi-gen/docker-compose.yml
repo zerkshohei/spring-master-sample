@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  openapi-generator:
+    image: 'openapitools/openapi-generator-cli'
+
+
