@@ -1,0 +1,18 @@
+// == Define locations for build logic ==
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+    includeBuild('../build-logic')
+}
+
+// == Define locations for components ==
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+include('db-versioning')
+rootProject.name = 'migration'
+includeBuild('../platforms')

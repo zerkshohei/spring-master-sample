@@ -1,0 +1,8 @@
+plugins {
+    // XXX: groovy-gradle-pluginは独自プラグインをgroovyで書くためのもの、そのためkotlinで書く場合は別のpluginを導入する必要がある
+    id('groovy-gradle-plugin')
+}
+
+dependencies {
+    implementation(platform('com.zerk.example.platform:plugins-platform'))
+}

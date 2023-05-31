@@ -1,0 +1,8 @@
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - target: 8025
+        published: 18025
+      - target: 1025
+        published: 11025

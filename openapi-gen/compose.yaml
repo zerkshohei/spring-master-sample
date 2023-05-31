@@ -1,0 +1,9 @@
+services:
+  openapi-generator:
+    image: 'openapitools/openapi-generator-cli'
+    command: 'generate -i local/openapi.yml -g go -o local/out/go'
+    volumes:
+      - type: bind
+        source: ./spec
+        target: ./local
+        read_only: true

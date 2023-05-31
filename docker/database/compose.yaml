@@ -1,0 +1,22 @@
+services:
+  rdb:
+    image: 'mysql:5.7.42'
+    container_name: 'mysql_database'
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sample_database
+      MYSQL_USER: test_sample_user
+      MYSQL_PASSWORD: test_sample_password
+      TZ: 'Asia/Tokyo'
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - target: 3306
+        published: 3307
+    volumes:
+      - type: volume
+        target: /var/lib/mysql
+      - type: bind
+        source: ./my.cnf
+        target: /etc/mysql/conf.d/my.cnf
+        read_only: true

@@ -1,0 +1,12 @@
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+includeBuild('../platforms')
+
+rootProject.name = 'build-logic'
+include('spring-boot-application')
+include('java-library')
+include('migration-tool')
+include('commons')

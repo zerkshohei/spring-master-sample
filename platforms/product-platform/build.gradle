@@ -1,0 +1,17 @@
+plugins {
+    id('java-platform')
+}
+group = 'com.zerk.example.platform'
+
+// allow the definition of dependencies to other platforms like the Spring Boot BOM
+javaPlatform.allowDependencies()
+
+dependencies {
+    // XXX: 特定のライブラリの依存関係について指定したバージョンで解決させる、オーバライド可能
+    api(platform('org.springframework.boot:spring-boot-dependencies:2.7.10'))
+
+    constraints {
+        // XXX: 特定のバージョンを使用することを強制させる、オーバライド不可
+        api('org.apache.juneau:juneau-marshall:8.2.0')
+    }
+}

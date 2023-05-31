@@ -1,0 +1,8 @@
+// TODO: 別プロジェクト化できる。
+// マイグレーションツールと、doma自動生成処理は別プロジェクトにして自動生成成果物のみmainプロジェクトで使用する。
+// ルートプロジェクトに設置するsetting.gradleはなくても大丈夫
+includeBuild('build-logic')
+includeBuild('platforms')
+includeBuild('main-process')
+includeBuild("migration")
+//includeBuild("openapi-gen");

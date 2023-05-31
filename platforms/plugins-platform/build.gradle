@@ -1,0 +1,17 @@
+plugins {
+    id('java-platform')
+}
+
+group = 'com.zerk.example.platform'
+
+dependencies {
+    constraints {
+        // org.springframework.bootspr2.7.10を使用することを強制する
+        api('org.springframework.boot:org.springframework.boot.gradle.plugin:2.7.10')
+        // 備忘録 io.spring.dependency-managementプラグインは、org.springframework.bootプラグインによって依存性解決されるため制約不要
+
+        // 2.2.0はgradle7（groovy3）でbuildされているため、gradle6以前では使用不可
+        // https://discuss.gradle.org/t/my-plugin-cant-be-applied-when-plugin-is-built-with-gradle-7-1-1/40464
+        api('org.liquibase:liquibase-gradle-plugin:2.1.1')
+    }
+}

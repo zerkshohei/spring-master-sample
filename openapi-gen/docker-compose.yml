@@ -1,9 +1,0 @@
-version: '3.7'
-services:
-  openapi-generator:
-    image: 'openapitools/openapi-generator-cli'
-    command: 'generate -i local/openapi.yml -g go -o local/out/go'
-    volumes:
-    - './spec:/local'
-
-

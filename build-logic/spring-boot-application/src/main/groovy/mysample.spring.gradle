@@ -1,0 +1,11 @@
+plugins {
+    id('mysample.common')
+    id('org.springframework.boot')
+    // annotationProcessorの依存解決のため下記プラグインを使用
+    id('io.spring.dependency-management')
+}
+dependencies {
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+}

@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/db_example
+    username: test
+    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver

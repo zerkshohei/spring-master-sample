@@ -1,0 +1,27 @@
+plugins {
+    id 'mysample.spring'
+    id 'mysample.migration-tool'
+}
+
+dependencies {
+    liquibaseRuntime 'com.mysql:mysql-connector-j'
+    liquibaseRuntime 'info.picocli:picocli:4.6.1'
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.22.0'
+//    implementation("com.mysql:mysql-connector-j")
+}
+
+liquibase {
+    activities {
+        update {
+            changeLogFile("./liquibase-work/multisql-setting.xml")
+            url("jdbc:mysql://localhost:3307/sample_database")
+            referenceUrl("jdbc:mysql://localhost:3307/sample_database")
+            referenceUsername("test_sample_user")
+            referencePassword("test_sample_password")
+            username("test_sample_user")
+            password("test_sample_password")
+            showBanner false
+        }
+    }
+    jvmArgs = ["-Duser.dir=$project.projectDir"]
+}
