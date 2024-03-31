@@ -2,7 +2,9 @@ spring:
   profiles:
     active: local
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/db_example
-    username: test
-    password: test
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/sample_database
+    username: test_sample_user
+    password: test_sample_password
     driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    web-application-type: none

@@ -1,1 +1,8 @@
-debug: true
+spring:
+  rabbitmq:
+    username: rabbit_user
+    password: rabbit_password
+
+tutorial:
+  client:
+    duration: 10000
