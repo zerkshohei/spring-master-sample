@@ -1,4 +1,4 @@
-package com.zerk.spring.memo.order_item;
+package com.zerk.spring.memo.orderitem;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +10,13 @@ public class OrderItemApi {
 
     private final OrderItemUseCase orderItemUseCase;
 
-    @GetMapping("/item")
+    @GetMapping("/item/{id}")
     public Item getItem() {
+        return orderItemUseCase.getDummy();
+    }
+
+    @GetMapping("/item")
+    public Item getItemList() {
         return orderItemUseCase.getDummy();
     }
 }

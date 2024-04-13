@@ -1,4 +1,4 @@
-package com.zerk.spring.memo.order_item;
+package com.zerk.spring.memo.orderitem;
 
 
 import lombok.Value;
