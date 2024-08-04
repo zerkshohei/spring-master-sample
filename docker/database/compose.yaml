@@ -1,22 +1,29 @@
 services:
-  rdb:
-    image: 'mysql:5.7.42'
+  local-database:
+    image: 'mysql:8.0.28-oracle' # mysqlのbugでautocommitがOFFだと初期化処理が動かない https://github.com/mysql/mysql-server/commit/7dbf4f80ed15f3c925cfb2b834142f23a2de719a
     container_name: 'mysql_database'
-    platform: linux/x86_64
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: sample_database
       MYSQL_USER: test_sample_user
       MYSQL_PASSWORD: test_sample_password
       TZ: 'Asia/Tokyo'
-    command: --default-authentication-plugin=mysql_native_password
+    entrypoint: [ "bash", "-c" , "/docker-entrypoint-initdb.d/check-init.sh && docker-entrypoint.sh mysqld" ]
     ports:
       - target: 3306
         published: 3307
     volumes:
       - type: volume
+        source: local-database-data
         target: /var/lib/mysql
       - type: bind
         source: ./my.cnf
         target: /etc/mysql/conf.d/my.cnf
         read_only: true
+      - type: bind
+        source: ./init
+        target: /docker-entrypoint-initdb.d
+        read_only: true
+
+volumes:
+  local-database-data:
